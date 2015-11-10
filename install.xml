@@ -4,9 +4,9 @@
 	<summary>Allows to insert Google Analytics code and Google Webmasters verification tag in Admin Panel. Translate your articles with Google to any language.</summary>
 	<author>Intelliants LLC</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>3.3.1</version>
-	<date>2015-04-29</date>
-	<compatibility>3.3</compatibility>
+	<version>4.0.0</version>
+	<date>2015-11-11</date>
+	<compatibility>4.0</compatibility>
 
 	<adminpages>
 		<page group="extensions" name="googletools" url="googletools/" menus="menu">Google Tools</page>
@@ -28,7 +28,7 @@
 	<hooks>
 		<hook name="smartyFrontBeforeHeadSection" type="smarty" page_type="front">
 			<![CDATA[
-{if $config.googletools_verification}
+{if $core.config.googletools_verification}
 	<meta name="google-site-verification" content="{$core.config.googletools_verification|escape:'html'}" />
 {/if}
 			]]>
@@ -47,6 +47,6 @@
 	</tooltips>
 
 	<blocks>
-		<block title="Translate To:" name="translate" position="right" type="smarty" sticky="1" filename="plugin:googletools:block.translate.tpl"><![CDATA[]]></block>
+		<block title="Translate To:" name="translate" position="right" type="smarty" sticky="1" filename="block.translate"><![CDATA[]]></block>
 	</blocks>
 </plugin>
